@@ -1,0 +1,28 @@
+//for mobile first 
+
+@mixin desktop{
+    @media screen and (min-width: 1200px){
+        @content
+    }
+};
+@mixin tablet{
+    @media screen  and (min-width: 720px){
+        @content
+    }
+};
+
+
+
+//for desktop first design 
+
+// @mixin mobile {
+//     @media screen and (max-width: 680px) {
+//         @content
+//     }
+// };
+
+// @mixin tablet {
+//     @media screen and (max-width: 1024px){
+//         @content
+//     }
+// }

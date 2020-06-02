@@ -1,0 +1,442 @@
+//CSS For the contact page
+
+.chatPage{
+    .chatPage-content{
+        width: 100%;
+        @include tablet {
+            display: flex ; 
+            flex-direction: row;
+        } 
+
+        .left-item{
+            width : 100%;
+            background: $bg_dark;
+            @include tablet {
+                width: 35%
+                //flex: 3;
+            }
+            @include desktop{
+                width: 25%;
+            }
+        }
+        .right-item {
+            width: 100%;
+            background: white;
+            @include tablet{
+                width: 65%;
+                //flex: 9
+            }
+            @include desktop{
+                width: 75%
+            }
+        
+        }
+    }
+
+
+}
+
+//scoped css for chat panel
+
+.contactpanel{
+    width : 100%;
+    height: 100vh;
+    //position: fixed;
+    &-content{
+        //padding: 20px 10px;
+        overflow-y: scroll;
+        height: 100vh;
+    }
+    &-header{
+        padding: 10px 20px 10px;
+        color: $default_dark;
+    }
+    &-body{
+        //padding: 10px;
+        &-content{
+            //overflow-y: scroll,
+        }
+    }
+
+    &-title{
+        font-size: 2rem;
+    }
+
+    &-seacrhbar{
+
+    }
+}
+
+//scoped csss for chatTile component
+
+.chatTile{
+    width: 100%;
+    //background: black;
+    color: $primary_dark;
+
+    &:hover{
+        background: $hover_dark
+    }
+   
+    &_selected{
+        @include tablet {
+            background: $hover_dark
+        }
+    }
+    
+    &-content{
+        //padding: 10px 10px;
+        display: flex;
+        flex-direction: row;
+        margin : 30px 0px 30px;
+        padding: 20px 20px 20px;
+    }
+    &-col-1{
+        width: 20%;
+        //background: pink;
+    }
+    &-col-2{
+        width: 80%;
+        //background: white
+        display: flex;
+        flex-direction: column;
+
+    }
+    &-row-1{
+        width : 100%;
+        &-content{
+            display: flex;
+            flex-direction: row;
+        }
+        //background: orange;
+    }
+    &-row-2{
+        width : 100%;
+        //background: orange;
+        &-content{
+            display: flex;
+            flex-direction: row
+        }
+    }
+    .chat-panel-item {
+        overflow-y: hidden;
+        //height: 2em;
+        //padding: 5px;
+    }
+    .low-row-item{
+        font-size: 14px;
+        @include tablet{
+            font-size: 10px;
+            margin: 2px 0px 2px;
+            height: 15px;
+        }
+        @include desktop{
+            font-size: 14px;
+            margin: 5px 0px 5px;
+            height: 20px;
+        }
+        height: 20px;
+        margin: 5px 0px 5px;
+    }
+    &-message{
+        @extend .chat-panel-item ;
+        @extend .low-row-item ;
+        flex:6 ;
+        padding-right: 5px;
+    }   
+    &-name{
+        @extend .chat-panel-item ;
+        flex: 6;
+        @include tablet{
+            font-size: 10px;
+            height: 15px;
+        }
+        @include desktop{
+            font-size: 14px;
+            height: 20px;
+        }
+        font-size: 14px;
+        color: $default_dark;
+        padding-right: 5px;
+
+    }
+    &-last-time{
+        @extend .low-row-item ;
+        text-align:right;
+        flex: 2;
+    }
+    .unread-icon{
+        &-container{
+            @extend .chat-panel-item ;
+            flex: 2
+        }
+        &-content{
+            float:right;
+            font-size: 9px;
+            border-radius: 15px;
+            //padding: 5px;
+            text-align: center;
+            width: auto ; 
+            padding: 3px 7px;
+            color: $default_dark;
+            background: lightcoral;
+        }
+    }
+    
+}
+
+
+
+
+//scoped css for message panel
+.messagepanel{
+    width: 100%;
+    height: 100vh;
+
+    &-content{
+        display:flex;
+        height: 100%;
+        flex-direction: column;
+    }
+    &-header{
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background: $secondary_dark;
+        color: $default_dark;
+        &-content{
+            display: flex;
+
+        }
+    }
+    &-body{
+        flex:8;
+        background:  $bg_dark;
+        overflow-y : scroll;
+        //font-size: 20rem;
+    }
+    &-form{
+        flex: 1;
+        background: $secondary_dark;
+    }
+
+    &-form-textfocus{
+        flex: 2 !important
+    }
+
+
+    &-back{
+        flex:1;
+        @include tablet {
+            display : none;
+        }
+        button{
+            border: none;
+            outline: none;
+            color: $default_dark;
+            background: none;
+        }
+    }
+
+    &-edit{
+        flex: 1
+    }
+    
+    &-title{
+        flex:4;
+        text-align: center;
+        @include tablet{
+            text-align: left ;
+            padding-left : 50px;
+            font-size: 1.5rem
+        }
+    }
+
+}
+
+
+//scoped css for the message form compontent
+
+
+.messageForm{
+    height: 100%;
+    &-content{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 100%;
+    }
+    &-items{
+        display:flex;
+        flex-direction: row; 
+        padding: 0 20px;
+        @include tablet {
+            padding: 10px 30px;
+        }
+    }
+
+    &-input-container{
+        flex: 10;
+        padding-right: 5px;
+        @include tablet {
+            flex: 16;
+            padding: 0px 10px 0px 0px
+        }
+
+        textarea{
+            outline: none;
+            border: none;
+            background: $bg_dark;
+            color: $default_dark;
+            //height: 30px;
+            border-radius: 60px;
+            padding: 5px 20px;
+            resize: none;
+            overflow-y: hidden;
+            @include tablet {
+                padding: 15px 20px;
+            }
+            &:focus{
+                height: 100px;
+                margin: 10px 0px 10px;
+                border-radius: 30px;
+                padding: 20px 20px;
+                overflow-y: scroll;
+            }
+
+            &::placeholder{
+                color: $primary_dark
+            }
+        }
+    }
+    &-submit-container{
+        flex:3;
+        display: flex; 
+        align-items: center;
+
+        button{
+            outline: none; 
+            background: none;
+            border: none;   
+            
+        }
+        .button-bg{
+            // color: $default_dark;
+            background: $primary_dark;
+            height: 30px;
+            border-radius: 60px;
+        }
+
+    }
+
+}
+
+
+.message-section{
+    padding-top : 10px;
+    &-Date{
+        width: 100%;
+    }
+    &-Date-content{
+        color: $default_dark;
+        text-align: center;
+        background: $primary_dark;
+        margin: auto;
+        width: 25%;
+        border-radius: 60px;
+        padding: 5px;
+        font-size: 0.8rem;
+        @include tablet{
+            width: 20%;
+            font-size: 1rem
+        }
+        @include desktop{
+            width: 10%
+        }
+    }
+}
+
+//scoped css for message Tile;
+
+
+.messageTile{
+    width: 100%;
+    //display: inline-block;
+    display: flex;
+    
+    &-content{
+        display: flex; 
+        flex-direction: column;
+        width : 40%;
+        background: $secondary-dark;
+        padding: 10px;
+        margin: 10px 20px;
+        //border-radius: 10px;
+        @include desktop{
+            width: 25%;
+        }
+    }
+    &-name{
+        color: $default_dark;
+    }
+    &-name-container{
+        margin: 5px 0px;
+    }
+    &-time{
+        text-align: right;
+        
+    }
+    &-time-container{
+
+    }
+    &-user-container{
+
+    }
+
+    &-user{
+        color: $bg_dark;
+    }
+}
+
+.owner{
+    //float: right;
+    justify-content: flex-end;
+    .messageTile-content{
+        background: rgb(45, 45, 79) !important    
+    }
+}
+
+
+
+.hide{
+    display:none;
+}
+
+.isInActive{
+    display: none;
+    @include tablet {
+        display: block;
+    }
+}
+
+
+
+.Nochat{
+    width: 100%;
+    display: flex; 
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+
+    &-content{
+        font-size: 1.2rem;
+        color: $default_dark;
+        width: 50%;
+        @include desktop{
+            font-size: 2.2rem
+        }
+    }
+
+}
